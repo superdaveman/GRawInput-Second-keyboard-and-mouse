@@ -88,7 +88,7 @@ HRESULT m_IDirectInputKeyboard7A::GetDeviceData(DWORD cbObjectData, LPDIDEVICEOB
 			DWORD keyId = VK_Keys_Map[rawKeyboard.VKey];
 			if(keyId != 0)
 			{
-				if(rawKeyboard.Message == WM_KEYDOWN && !g_keyboardButtonState[keyId])
+				if((rawKeyboard.Message == WM_KEYDOWN) && !g_keyboardButtonState[keyId])
 				{
 					DIDEVICEOBJECTDATA keyboardKey;
 					keyboardKey.dwOfs = keyId;
